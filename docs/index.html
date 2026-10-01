@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>チャンピオン メインレーン一覧</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF0EA; --surface:#F8F9F5; --ink:#1D2B28; --muted:#5E6E69; --line:#CDD5CE;
+  --rift:#2F5D50; --gold:#A8842F;
+  --top:#B5523B; --jungle:#4C7A3A; --mid:#3E62A8; --adc:#A8842F; --support:#7A5A9E;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#16211F; --surface:#1D2A27; --ink:#E6ECE7; --muted:#9AAAA4; --line:#33443F;
+    --rift:#7FB8A5; --gold:#D6B25E;
+    --top:#E08A72; --jungle:#8DBE72; --mid:#86A7E6; --adc:#D6B25E; --support:#B79AD8;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16211F; --surface:#1D2A27; --ink:#E6ECE7; --muted:#9AAAA4; --line:#33443F;
+  --rift:#7FB8A5; --gold:#D6B25E;
+  --top:#E08A72; --jungle:#8DBE72; --mid:#86A7E6; --adc:#D6B25E; --support:#B79AD8;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:900;letter-spacing:.02em;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 24px;font-size:.92rem}
+.lanes{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:18px}
+.lane{border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;
+  padding:10px 8px;text-align:left;cursor:pointer;font:inherit}
+.lane .n{display:block;font-size:1.7rem;font-weight:900;line-height:1.1;color:var(--c)}
+.lane .l{font-size:.85rem;color:var(--muted)}
+.lane[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 -4px 0 var(--c)}
+.lane:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.tools input[type=search],.tools select{font:inherit;padding:9px 12px;border:1px solid var(--line);
+  border-radius:8px;background:var(--surface);color:var(--ink)}
+.tools input[type=search]{flex:1;min-width:180px}
+.btn{font:inherit;padding:9px 14px;border-radius:8px;border:1px solid var(--rift);background:transparent;color:var(--rift);cursor:pointer}
+.btn.solid{background:var(--rift);color:var(--surface)}
+.list{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:minmax(120px,1.2fr) 110px 1.6fr;gap:14px;align-items:center;
+  padding:10px 4px;border-bottom:1px solid var(--line)}
+.name{font-weight:700;text-transform:capitalize;overflow-wrap:anywhere}
+.badge{display:inline-flex;align-items:baseline;gap:6px;font-weight:700;color:var(--c)}
+.badge small{color:var(--muted);font-weight:400}
+.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--line)}
+.bar span{background:var(--c);height:100%}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin:0 0 10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--c);margin-right:5px}
+.drop{border:2px dashed var(--line);border-radius:14px;padding:48px 20px;text-align:center;background:var(--surface)}
+.drop p{margin:0 0 14px}
+.foot{margin-top:28px;font-size:.8rem;color:var(--muted)}
+.err{color:var(--top);margin-top:10px}
+@media (max-width:640px){
+  .lanes{grid-template-columns:repeat(3,1fr)}
+  .row{grid-template-columns:1fr auto;}
+  .row .bar{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>メインレーン一覧</h1>
+  <p class="sub" id="meta">チャンピオンごとに、OP.GGでピック率が一番高いレーン</p>
+
+  <div id="empty" class="drop">
+    <p id="status">データを読み込んでいます…</p>
+  </div>
+
+  <div id="main" hidden>
+    <div class="lanes" id="lanes"></div>
+    <div class="tools">
+      <input type="search" id="q" placeholder="チャンピオン名で絞り込み" aria-label="チャンピオン名で絞り込み">
+      <select id="sort" aria-label="並び順">
+        <option value="name">名前順</option>
+        <option value="rate">ピック率が高い順</option>
+        <option value="flex">複数レーンで使われる順</option>
+      </select>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div class="list" id="list"></div>
+    <p class="foot">データ出典: OP.GG（https://op.gg）。バーは各レーンのピック率の比率です。毎日6:00(JST)ごろ自動更新。</p>
+  </div>
+</div>
+
+<script>
+const LANES = [
+  {k:"top",label:"トップ"},{k:"jungle",label:"ジャングル"},{k:"mid",label:"ミッド"},
+  {k:"adc",label:"ADC"},{k:"support",label:"サポート"}
+];
+const laneOf = k => LANES.find(l => l.k === k);
+let data = [], meta = "", filter = null;
+
+async function loadData(){
+  try {
+    const res = await fetch("data.json", {cache:"no-store"});
+    if (!res.ok) throw new Error(`data.json を取得できませんでした (HTTP ${res.status})。Actionsが一度も成功していない可能性があります。`);
+    const json = await res.json();
+    data = json.champions || [];
+    const t = new Date(json.updated_at);
+    meta = `${t.toLocaleString("ja-JP", {timeZone:"Asia/Tokyo"})} 更新`;
+    render();
+  } catch(e){
+    document.getElementById("status").textContent = e.message;
+  }
+}
+
+function show(has){
+  document.getElementById("empty").hidden = has;
+  document.getElementById("main").hidden = !has;
+}
+
+function render(){
+  show(data.length > 0);
+  if (!data.length) return;
+  document.getElementById("meta").textContent = `${data.length}体・${meta}`;
+
+  const lanesEl = document.getElementById("lanes");
+  lanesEl.innerHTML = "";
+  LANES.forEach(l => {
+    const b = document.createElement("button");
+    b.className = "lane"; b.style.setProperty("--c", `var(--${l.k})`);
+    b.setAttribute("aria-pressed", filter === l.k);
+    b.innerHTML = `<span class="n">${data.filter(d => d.main === l.k).length}</span><span class="l">${l.label}</span>`;
+    b.onclick = () => { filter = filter === l.k ? null : l.k; render(); };
+    lanesEl.appendChild(b);
+  });
+
+  document.getElementById("legend").innerHTML =
+    LANES.map(l => `<span style="--c:var(--${l.k})"><i></i>${l.label}</span>`).join("");
+
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const sort = document.getElementById("sort").value;
+  const flex = d => { const v = Object.values(d.rates).sort((a,b)=>b-a); return v.length > 1 ? v[1]/v[0] : 0; };
+  let rows = data.filter(d => (!filter || d.main === filter) && d.name.toLowerCase().includes(q));
+  rows.sort(sort === "rate" ? (a,b)=>b.rate-a.rate : sort === "flex" ? (a,b)=>flex(b)-flex(a) : (a,b)=>a.name.localeCompare(b.name));
+
+  const list = document.getElementById("list");
+  if (!rows.length){ list.innerHTML = `<p style="padding:16px 4px;color:var(--muted)">条件に合うチャンピオンがいません。</p>`; return; }
+  list.innerHTML = rows.map(d => {
+    const l = laneOf(d.main) || {k:"mid",label:d.main};
+    const total = Object.values(d.rates).reduce((a,b)=>a+b,0) || 1;
+    const segs = LANES.filter(x => d.rates[x.k]).map(x =>
+      `<span style="--c:var(--${x.k});width:${d.rates[x.k]/total*100}%" title="${x.label} ${d.rates[x.k]}%"></span>`).join("");
+    const aria = LANES.filter(x => d.rates[x.k]).map(x => `${x.label} ${d.rates[x.k]}%`).join("、");
+    return `<div class="row"><span class="name">${esc(d.name)}</span>
+      <span class="badge" style="--c:var(--${l.k})">${l.label}<small>${d.rate}%</small></span>
+      <div class="bar" role="img" aria-label="${aria}">${segs}</div></div>`;
+  }).join("");
+}
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+document.getElementById("q").oninput = render;
+document.getElementById("sort").onchange = render;
+loadData();
+</script>
+</body>
+</html>
