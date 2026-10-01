@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>チャンピオン メインレーン一覧</title>
+<title>チャンピオン メインレーン一覧(JP)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -78,7 +78,7 @@ h1{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:900;letter-spacing:.02em;margi
 </head>
 <body>
 <div class="wrap">
-  <h1>メインレーン一覧</h1>
+  <h1>メインレーン一覧(JP)</h1>
   <p class="sub" id="meta">チャンピオンごとに、OP.GGでピック率が一番高いレーン</p>
 
   <div id="empty" class="drop">
@@ -145,7 +145,7 @@ async function loadData(){
     all.filter(c => !c.keys.some(k => have.has(k))).forEach(c =>
       data.push({name: c.name, ja: c.ja, icon: c.icon, main: null, rate: 0, rates: {}, nodata: true}));
     const t = new Date(json.updated_at);
-    meta = `${t.toLocaleString("ja-JP", {timeZone:"Asia/Tokyo"})} 更新`;
+    meta = `${json.scope ? json.scope + "・" : ""}${t.toLocaleString("ja-JP", {timeZone:"Asia/Tokyo"})} 更新`;
     render();
   } catch(e){
     document.getElementById("status").textContent = e.message;

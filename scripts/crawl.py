@@ -15,7 +15,11 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 POSITIONS = ["top", "jungle", "mid", "adc", "support"]
-URL = "https://op.gg/lol/champions?position={}"
+# 集計条件: 日本サーバー(jp)・全ランク帯(all)・ランク(ソロ/デュオ)
+REGION = "jp"
+TIER = "all"
+SCOPE = "日本サーバー・全ランク帯"
+URL = "https://op.gg/ja/lol/champions?position={}&type=ranked&region=" + REGION + "&tier=" + TIER
 WAIT_SEC = 3          # ページ間の待機（サーバー負荷対策）
 MIN_CHAMPIONS = 100   # これ未満なら取得失敗とみなして上書きしない
 OUT = Path(__file__).resolve().parent.parent / "docs" / "data.json"
@@ -47,10 +51,14 @@ def scrape_position(page, pos):
 
     headers = [h.inner_text().strip() for h in page.query_selector_all("table thead th")]
     pick_idx = next(
-        (i for i, h in enumerate(headers) if re.search(r"pick|ピック", h, re.I)), None
+        (i for i, h in enumerate(headers) if re.search(r"pick|ピック|使用率", h, re.I)), None
     )
     if pick_idx is None:
         raise RuntimeError(f"{pos}: ピック率の列が見つかりません。headers={headers}")
+
+    # 条件が反映されているか確認できるよう、ページの見出しをログに出す
+    h1 = page.query_selector("h1")
+    print(f"{pos}: 見出し = {h1.inner_text().strip() if h1 else '(なし)'}")
 
     # 表はスクロールで続きが読み込まれるので、増えなくなるまで下へスクロールしながら読む
     result = {}
@@ -102,6 +110,7 @@ def main():
             {
                 "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                 "source": "OP.GG (https://op.gg)",
+                "scope": SCOPE,
                 "champions": champions,
             },
             ensure_ascii=False,
