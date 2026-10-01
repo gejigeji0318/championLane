@@ -26,6 +26,21 @@ def parse_pct(text):
     return float(m.group(1)) if m else None
 
 
+def read_rows(page, pick_idx, result):
+    """今表示されている行を読み取り result に追加する。新しく増えた数を返す"""
+    before = len(result)
+    for row in page.query_selector_all("table tbody tr"):
+        link = row.query_selector('a[href*="/champions/"]')
+        cells = row.query_selector_all("td")
+        if not link or len(cells) <= pick_idx:
+            continue
+        m = re.search(r"/champions/([^/?#]+)", link.get_attribute("href") or "")
+        rate = parse_pct(cells[pick_idx].inner_text())
+        if m and rate is not None:
+            result[m.group(1)] = rate
+    return len(result) - before
+
+
 def scrape_position(page, pos):
     page.goto(URL.format(pos), wait_until="domcontentloaded", timeout=60000)
     page.wait_for_selector("table tbody tr", timeout=30000)
@@ -37,16 +52,19 @@ def scrape_position(page, pos):
     if pick_idx is None:
         raise RuntimeError(f"{pos}: ピック率の列が見つかりません。headers={headers}")
 
+    # 表はスクロールで続きが読み込まれるので、増えなくなるまで下へスクロールしながら読む
     result = {}
-    for row in page.query_selector_all("table tbody tr"):
-        link = row.query_selector('a[href*="/champions/"]')
-        cells = row.query_selector_all("td")
-        if not link or len(cells) <= pick_idx:
-            continue
-        m = re.search(r"/champions/([^/?#]+)", link.get_attribute("href") or "")
-        rate = parse_pct(cells[pick_idx].inner_text())
-        if m and rate is not None:
-            result[m.group(1)] = rate
+    read_rows(page, pick_idx, result)
+    idle = 0
+    for _ in range(60):
+        rows = page.query_selector_all("table tbody tr")
+        if rows:
+            rows[-1].scroll_into_view_if_needed()
+        page.mouse.wheel(0, 3000)
+        page.wait_for_timeout(1000)
+        idle = 0 if read_rows(page, pick_idx, result) else idle + 1
+        if idle >= 3:
+            break
     print(f"{pos}: {len(result)}体取得")
     return result
 
