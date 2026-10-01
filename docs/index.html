@@ -50,7 +50,8 @@ h1{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:900;letter-spacing:.02em;margi
 .list{border-top:1px solid var(--line)}
 .row{display:grid;grid-template-columns:minmax(120px,1.2fr) 110px 1.6fr;gap:14px;align-items:center;
   padding:10px 4px;border-bottom:1px solid var(--line)}
-.name{font-weight:700;text-transform:capitalize;overflow-wrap:anywhere}
+.name{font-weight:700;overflow-wrap:anywhere}
+.name small{display:block;font-weight:400;font-size:.75rem;color:var(--muted);text-transform:capitalize;line-height:1.2}
 .badge{display:inline-flex;align-items:baseline;gap:6px;font-weight:700;color:var(--c)}
 .badge small{color:var(--muted);font-weight:400}
 .bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--line)}
@@ -80,7 +81,7 @@ h1{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:900;letter-spacing:.02em;margi
   <div id="main" hidden>
     <div class="lanes" id="lanes"></div>
     <div class="tools">
-      <input type="search" id="q" placeholder="チャンピオン名で絞り込み" aria-label="チャンピオン名で絞り込み">
+      <input type="search" id="q" placeholder="チャンピオン名で絞り込み（日本語・英語）" aria-label="チャンピオン名で絞り込み">
       <select id="sort" aria-label="並び順">
         <option value="name">名前順</option>
         <option value="rate">ピック率が高い順</option>
@@ -89,7 +90,7 @@ h1{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:900;letter-spacing:.02em;margi
     </div>
     <div class="legend" id="legend"></div>
     <div class="list" id="list"></div>
-    <p class="foot">データ出典: OP.GG（https://op.gg）。バーは各レーンのピック率の比率です。毎日6:00(JST)ごろ自動更新。</p>
+    <p class="foot">データ出典: OP.GG（https://op.gg）、チャンピオン名: Riot Games。バーは各レーンのピック率の比率です。毎日6:00(JST)ごろ自動更新。</p>
   </div>
 </div>
 
@@ -101,12 +102,30 @@ const LANES = [
 const laneOf = k => LANES.find(l => l.k === k);
 let data = [], meta = "", filter = null;
 
+const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+// Riot公式のData Dragonから {正規化した英名/ID: 日本語名} を作る
+async function loadJapaneseNames(){
+  const get = async u => { const r = await fetch(u); if (!r.ok) throw new Error(u); return r.json(); };
+  const [ver] = await get("https://ddragon.leagueoflegends.com/api/versions.json");
+  const base = `https://ddragon.leagueoflegends.com/cdn/${ver}/data`;
+  const [ja, en] = await Promise.all([get(`${base}/ja_JP/champion.json`), get(`${base}/en_US/champion.json`)]);
+  const map = {};
+  for (const [id, c] of Object.entries(ja.data)){
+    map[norm(id)] = c.name;                                      // 例: monkeyking
+    if (en.data[id]) map[norm(en.data[id].name)] = c.name;       // 例: wukong
+  }
+  return map;
+}
+
 async function loadData(){
+  const namesPromise = loadJapaneseNames().catch(e => { console.warn("日本語名の取得に失敗", e); return {}; });
   try {
     const res = await fetch("data.json", {cache:"no-store"});
     if (!res.ok) throw new Error(`data.json を取得できませんでした (HTTP ${res.status})。Actionsが一度も成功していない可能性があります。`);
     const json = await res.json();
-    data = json.champions || [];
+    const names = await namesPromise;
+    data = (json.champions || []).map(d => ({...d, ja: names[norm(d.name)] || d.name}));
     const t = new Date(json.updated_at);
     meta = `${t.toLocaleString("ja-JP", {timeZone:"Asia/Tokyo"})} 更新`;
     render();
@@ -142,8 +161,8 @@ function render(){
   const q = document.getElementById("q").value.trim().toLowerCase();
   const sort = document.getElementById("sort").value;
   const flex = d => { const v = Object.values(d.rates).sort((a,b)=>b-a); return v.length > 1 ? v[1]/v[0] : 0; };
-  let rows = data.filter(d => (!filter || d.main === filter) && d.name.toLowerCase().includes(q));
-  rows.sort(sort === "rate" ? (a,b)=>b.rate-a.rate : sort === "flex" ? (a,b)=>flex(b)-flex(a) : (a,b)=>a.name.localeCompare(b.name));
+  let rows = data.filter(d => (!filter || d.main === filter) && (d.name.toLowerCase().includes(q) || d.ja.toLowerCase().includes(q) || toKata(d.ja).includes(toKata(q))));
+  rows.sort(sort === "rate" ? (a,b)=>b.rate-a.rate : sort === "flex" ? (a,b)=>flex(b)-flex(a) : (a,b)=>a.ja.localeCompare(b.ja, "ja"));
 
   const list = document.getElementById("list");
   if (!rows.length){ list.innerHTML = `<p style="padding:16px 4px;color:var(--muted)">条件に合うチャンピオンがいません。</p>`; return; }
@@ -153,11 +172,12 @@ function render(){
     const segs = LANES.filter(x => d.rates[x.k]).map(x =>
       `<span style="--c:var(--${x.k});width:${d.rates[x.k]/total*100}%" title="${x.label} ${d.rates[x.k]}%"></span>`).join("");
     const aria = LANES.filter(x => d.rates[x.k]).map(x => `${x.label} ${d.rates[x.k]}%`).join("、");
-    return `<div class="row"><span class="name">${esc(d.name)}</span>
+    return `<div class="row"><span class="name">${esc(d.ja)}${d.ja !== d.name ? `<small>${esc(d.name)}</small>` : ""}</span>
       <span class="badge" style="--c:var(--${l.k})">${l.label}<small>${d.rate}%</small></span>
       <div class="bar" role="img" aria-label="${aria}">${segs}</div></div>`;
   }).join("");
 }
+const toKata = s => s.replace(/[\u3041-\u3096]/g, c => String.fromCharCode(c.charCodeAt(0) + 0x60));
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 document.getElementById("q").oninput = render;
