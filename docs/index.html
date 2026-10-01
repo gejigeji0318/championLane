@@ -12,19 +12,20 @@
   --bg:#EDF0EA; --surface:#F8F9F5; --ink:#1D2B28; --muted:#5E6E69; --line:#CDD5CE;
   --rift:#2F5D50; --gold:#A8842F;
   --top:#B5523B; --jungle:#4C7A3A; --mid:#3E62A8; --adc:#A8842F; --support:#7A5A9E;
+  --on-bar:#FFFFFF;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     --bg:#16211F; --surface:#1D2A27; --ink:#E6ECE7; --muted:#9AAAA4; --line:#33443F;
-    --rift:#7FB8A5; --gold:#D6B25E;
+    --rift:#7FB8A5; --gold:#D6B25E; --on-bar:#14201D;
     --top:#E08A72; --jungle:#8DBE72; --mid:#86A7E6; --adc:#D6B25E; --support:#B79AD8;
   }
 }
 :root[data-theme="dark"]{
   --bg:#16211F; --surface:#1D2A27; --ink:#E6ECE7; --muted:#9AAAA4; --line:#33443F;
-  --rift:#7FB8A5; --gold:#D6B25E;
+  --rift:#7FB8A5; --gold:#D6B25E; --on-bar:#14201D;
   --top:#E08A72; --jungle:#8DBE72; --mid:#86A7E6; --adc:#D6B25E; --support:#B79AD8;
 }
 *,*::before,*::after{box-sizing:inherit}
@@ -48,22 +49,26 @@ h1{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:900;letter-spacing:.02em;margi
 .btn{font:inherit;padding:9px 14px;border-radius:8px;border:1px solid var(--rift);background:transparent;color:var(--rift);cursor:pointer}
 .btn.solid{background:var(--rift);color:var(--surface)}
 .list{border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:minmax(120px,1.2fr) 110px 1.6fr;gap:14px;align-items:center;
+.row{display:grid;grid-template-columns:minmax(170px,1.3fr) 110px 1.6fr;gap:14px;align-items:center;
   padding:10px 4px;border-bottom:1px solid var(--line)}
-.name{font-weight:700;overflow-wrap:anywhere}
+.name{font-weight:700;overflow-wrap:anywhere;display:flex;align-items:center;gap:10px;min-width:0}
+.icon{width:40px;height:40px;flex:none;border-radius:8px;border:2px solid var(--line);background:var(--line);object-fit:cover}
+.icon.ph{display:inline-flex;align-items:center;justify-content:center;color:var(--muted);font-size:1rem}
 .name small{display:block;font-weight:400;font-size:.75rem;color:var(--muted);text-transform:capitalize;line-height:1.2}
 .badge{display:inline-flex;align-items:baseline;gap:6px;font-weight:700;color:var(--c)}
 .badge small{color:var(--muted);font-weight:400}
 .badge.none{color:var(--muted);font-weight:500}
 .note{font-size:.8rem;color:var(--muted)}
-.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--line)}
-.bar span{background:var(--c);height:100%}
+.bar{display:flex;height:20px;border-radius:6px;overflow:hidden;background:var(--line);gap:2px}
+.bar span{background:var(--c);height:100%;display:flex;align-items:center;justify-content:center;
+  color:var(--on-bar);font-size:.72rem;font-weight:700;white-space:nowrap;overflow:hidden;font-variant-numeric:tabular-nums}
 .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin:0 0 10px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--c);margin-right:5px}
 .drop{border:2px dashed var(--line);border-radius:14px;padding:48px 20px;text-align:center;background:var(--surface)}
 .drop p{margin:0 0 14px}
 .foot{margin-top:28px;font-size:.8rem;color:var(--muted)}
 .err{color:var(--top);margin-top:10px}
+.credit{margin-top:6px;font-size:.8rem;color:var(--muted);letter-spacing:.02em}
 @media (max-width:640px){
   .lanes{grid-template-columns:repeat(3,1fr)}
   .row{grid-template-columns:1fr auto;}
@@ -92,7 +97,8 @@ h1{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:900;letter-spacing:.02em;margi
     </div>
     <div class="legend" id="legend"></div>
     <div class="list" id="list"></div>
-    <p class="foot">データ出典: OP.GG（https://op.gg）、チャンピオン名: Riot Games。バーは各レーンのピック率の比率です。毎日6:00(JST)ごろ自動更新。</p>
+    <p class="foot">データ出典: OP.GG（https://op.gg）、チャンピオン名: Riot Games。バーは各レーンで使われている割合です（細い部分はカーソルを合わせると数値が出ます）。毎日6:00(JST)ごろ自動更新。</p>
+    <p class="credit">powered by げじげじ（Vout NCG）</p>
   </div>
 </div>
 
@@ -106,7 +112,7 @@ let data = [], meta = "", filter = null;
 
 const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, "");
 
-// Riot公式のData Dragonから、日本語名の対応表と全チャンピオンの一覧を作る
+// Riot公式のData Dragonから、日本語名・アイコンの対応表と全チャンピオンの一覧を作る
 async function loadJapaneseNames(){
   const get = async u => { const r = await fetch(u); if (!r.ok) throw new Error(u); return r.json(); };
   const [ver] = await get("https://ddragon.leagueoflegends.com/api/versions.json");
@@ -116,8 +122,9 @@ async function loadJapaneseNames(){
   for (const [id, c] of Object.entries(ja.data)){
     const keys = [norm(id)];                                     // 例: monkeyking
     if (en.data[id]) keys.push(norm(en.data[id].name));          // 例: wukong
-    keys.forEach(k => map[k] = c.name);
-    all.push({keys, name: en.data[id]?.name || id, ja: c.name});
+    const info = {ja: c.name, icon: `https://ddragon.leagueoflegends.com/cdn/${ver}/img/champion/${c.image.full}`};
+    keys.forEach(k => map[k] = info);
+    all.push({keys, name: en.data[id]?.name || id, ...info});
   }
   return {map, all};
 }
@@ -129,11 +136,14 @@ async function loadData(){
     if (!res.ok) throw new Error(`data.json を取得できませんでした (HTTP ${res.status})。Actionsが一度も成功していない可能性があります。`);
     const json = await res.json();
     const {map, all} = await namesPromise;
-    data = (json.champions || []).map(d => ({...d, ja: map[norm(d.name)] || d.name}));
+    data = (json.champions || []).map(d => {
+      const info = map[norm(d.name)];
+      return {...d, ja: info?.ja || d.name, icon: info?.icon};
+    });
     // OP.GGの一覧に載っていない（ピック率が低い等）チャンピオンも「データ不足」として加える
     const have = new Set(data.map(d => norm(d.name)));
     all.filter(c => !c.keys.some(k => have.has(k))).forEach(c =>
-      data.push({name: c.name, ja: c.ja, main: null, rate: 0, rates: {}, nodata: true}));
+      data.push({name: c.name, ja: c.ja, icon: c.icon, main: null, rate: 0, rates: {}, nodata: true}));
     const t = new Date(json.updated_at);
     meta = `${t.toLocaleString("ja-JP", {timeZone:"Asia/Tokyo"})} 更新`;
     render();
@@ -176,17 +186,25 @@ function render(){
   const list = document.getElementById("list");
   if (!rows.length){ list.innerHTML = `<p style="padding:16px 4px;color:var(--muted)">条件に合うチャンピオンがいません。</p>`; return; }
   list.innerHTML = rows.map(d => {
-    const name = `<span class="name">${esc(d.ja)}${d.ja !== d.name ? `<small>${esc(d.name)}</small>` : ""}</span>`;
+    const icon = d.icon
+      ? `<img class="icon" src="${esc(d.icon)}" alt="" loading="lazy" width="40" height="40">`
+      : `<span class="icon ph" aria-hidden="true">${esc(d.ja.slice(0,1))}</span>`;
+    const name = `<span class="name">${icon}<span>${esc(d.ja)}${d.ja !== d.name ? `<small>${esc(d.name)}</small>` : ""}</span></span>`;
     if (d.nodata) return `<div class="row">${name}
       <span class="badge none">データ不足</span>
       <span class="note">ピック率が低く、OP.GGのレーン別一覧に未掲載</span></div>`;
     const l = laneOf(d.main) || {k:"mid",label:d.main};
     const total = Object.values(d.rates).reduce((a,b)=>a+b,0) || 1;
-    const segs = LANES.filter(x => d.rates[x.k]).map(x =>
-      `<span style="--c:var(--${x.k});width:${d.rates[x.k]/total*100}%" title="${x.label} ${d.rates[x.k]}%"></span>`).join("");
-    const aria = LANES.filter(x => d.rates[x.k]).map(x => `${x.label} ${d.rates[x.k]}%`).join("、");
+    // 各レーンの割合（そのチャンピオンの全レーン合計を100%とした比率）
+    const used = LANES.filter(x => d.rates[x.k]);
+    const share = x => d.rates[x.k] / total * 100;
+    const segs = used.map(x => {
+      const p = share(x);
+      return `<span style="--c:var(--${x.k});width:${p}%" title="${x.label} ${Math.round(p)}%（ピック率 ${d.rates[x.k]}%）">${p >= 12 ? Math.round(p) + "%" : ""}</span>`;
+    }).join("");
+    const aria = used.map(x => `${x.label} ${Math.round(share(x))}%`).join("、");
     return `<div class="row">${name}
-      <span class="badge" style="--c:var(--${l.k})">${l.label}<small>${d.rate}%</small></span>
+      <span class="badge" style="--c:var(--${l.k})">${l.label}</span>
       <div class="bar" role="img" aria-label="${aria}">${segs}</div></div>`;
   }).join("");
 }
