@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-01T08:02:17+00:00",
+ "updated_at": "2026-10-01T08:43:07+00:00",
  "source": "OP.GG (https://op.gg)",
  "champions": [
   {
@@ -49,7 +49,8 @@
    "main": "top",
    "rate": 3.83,
    "rates": {
-    "top": 3.83
+    "top": 3.83,
+    "jungle": 0.81
    }
   },
   {
@@ -453,6 +454,7 @@
    "rate": 5.46,
    "rates": {
     "top": 5.46,
+    "jungle": 1.65,
     "mid": 0.75
    }
   },
@@ -634,6 +636,7 @@
    "main": "mid",
    "rate": 6.55,
    "rates": {
+    "jungle": 0.67,
     "mid": 6.55
    }
   },
@@ -642,6 +645,7 @@
    "main": "adc",
    "rate": 7.4,
    "rates": {
+    "mid": 0.64,
     "adc": 7.4
    }
   },
@@ -696,14 +700,16 @@
    "main": "jungle",
    "rate": 6.45,
    "rates": {
+    "top": 0.56,
     "jungle": 6.45
    }
   },
   {
    "name": "mel",
-   "main": "adc",
-   "rate": 0.9,
+   "main": "mid",
+   "rate": 2.35,
    "rates": {
+    "mid": 2.35,
     "adc": 0.9,
     "support": 0.68
    }
@@ -853,6 +859,7 @@
    "rate": 3.25,
    "rates": {
     "top": 2.84,
+    "jungle": 0.76,
     "mid": 0.76,
     "support": 3.25
    }
@@ -954,6 +961,23 @@
    "rate": 2.36,
    "rates": {
     "top": 2.36
+   }
+  },
+  {
+   "name": "rumble",
+   "main": "top",
+   "rate": 1.48,
+   "rates": {
+    "top": 1.48
+   }
+  },
+  {
+   "name": "ryze",
+   "main": "mid",
+   "rate": 2.49,
+   "rates": {
+    "top": 0.59,
+    "mid": 2.49
    }
   },
   {
@@ -1061,6 +1085,7 @@
    "main": "adc",
    "rate": 3.36,
    "rates": {
+    "mid": 0.5,
     "adc": 3.36
    }
   },
@@ -1085,6 +1110,7 @@
    "main": "support",
    "rate": 2.56,
    "rates": {
+    "top": 0.56,
     "mid": 0.58,
     "adc": 0.89,
     "support": 2.56
@@ -1150,6 +1176,7 @@
    "rate": 4.21,
    "rates": {
     "top": 4.21,
+    "jungle": 0.59,
     "support": 0.51
    }
   },
@@ -1208,6 +1235,7 @@
    "main": "jungle",
    "rate": 2.06,
    "rates": {
+    "top": 0.58,
     "jungle": 2.06
    }
   },
@@ -1224,6 +1252,7 @@
    "main": "adc",
    "rate": 2.67,
    "rates": {
+    "top": 1.1,
     "adc": 2.67
    }
   },
@@ -1232,6 +1261,7 @@
    "main": "adc",
    "rate": 2.98,
    "rates": {
+    "top": 1.59,
     "adc": 2.98
    }
   },
