@@ -7,7 +7,7 @@ GitHub Actions から1日1回実行される想定。
 """
 import json
 import re
-import sys
+import sysADC
 import time
 from datetime import datetime, timezone
 from pathlib import Path
