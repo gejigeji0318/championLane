@@ -1,32 +1,32 @@
 {
- "updated_at": "2026-11-26T03:31:10+00:00",
+ "updated_at": "2026-11-27T03:34:46+00:00",
  "source": "OP.GG (https://op.gg)",
  "scope": "日本サーバー・全ランク帯",
  "champions": [
   {
    "name": "aatrox",
    "main": "top",
-   "rate": 8.22,
+   "rate": 8.23,
    "rates": {
-    "top": 8.22,
-    "jungle": 0.69
+    "top": 8.23,
+    "jungle": 0.71
    }
   },
   {
    "name": "ahri",
    "main": "mid",
-   "rate": 14.24,
+   "rate": 14.2,
    "rates": {
-    "mid": 14.24
+    "mid": 14.2
    }
   },
   {
    "name": "akali",
    "main": "mid",
-   "rate": 9.41,
+   "rate": 9.4,
    "rates": {
-    "top": 1.78,
-    "mid": 9.41
+    "top": 1.79,
+    "mid": 9.4
    }
   },
   {
@@ -40,118 +40,118 @@
   {
    "name": "alistar",
    "main": "support",
-   "rate": 6.27,
+   "rate": 6.29,
    "rates": {
-    "support": 6.27
+    "support": 6.29
    }
   },
   {
    "name": "ambessa",
    "main": "top",
-   "rate": 6.72,
+   "rate": 6.7,
    "rates": {
-    "top": 6.72,
-    "jungle": 0.87
+    "top": 6.7,
+    "jungle": 0.88
    }
   },
   {
    "name": "amumu",
    "main": "jungle",
-   "rate": 2.4,
+   "rate": 2.42,
    "rates": {
-    "jungle": 2.4,
-    "support": 0.65
+    "jungle": 2.42,
+    "support": 0.67
    }
   },
   {
    "name": "anivia",
    "main": "mid",
-   "rate": 2.21,
+   "rate": 2.22,
    "rates": {
-    "mid": 2.21
+    "mid": 2.22
    }
   },
   {
    "name": "annie",
    "main": "mid",
-   "rate": 2.23,
+   "rate": 2.22,
    "rates": {
-    "mid": 2.23
+    "mid": 2.22
    }
   },
   {
    "name": "aphelios",
    "main": "adc",
-   "rate": 7.84,
+   "rate": 7.85,
    "rates": {
-    "adc": 7.84
+    "adc": 7.85
    }
   },
   {
    "name": "ashe",
    "main": "adc",
-   "rate": 10.23,
+   "rate": 10.21,
    "rates": {
-    "adc": 10.23
+    "adc": 10.21
    }
   },
   {
    "name": "aurelionsol",
    "main": "mid",
-   "rate": 2.84,
+   "rate": 2.83,
    "rates": {
-    "mid": 2.84,
-    "adc": 0.86
+    "mid": 2.83,
+    "adc": 0.85
    }
   },
   {
    "name": "aurora",
    "main": "mid",
-   "rate": 3.37,
+   "rate": 3.34,
    "rates": {
     "top": 0.6,
-    "mid": 3.37
+    "mid": 3.34
    }
   },
   {
    "name": "azir",
    "main": "mid",
-   "rate": 2.16,
+   "rate": 2.11,
    "rates": {
-    "mid": 2.16
+    "mid": 2.11
    }
   },
   {
    "name": "bard",
    "main": "support",
-   "rate": 2.32,
+   "rate": 2.3,
    "rates": {
-    "support": 2.32
+    "support": 2.3
    }
   },
   {
    "name": "belveth",
    "main": "jungle",
-   "rate": 3.74,
+   "rate": 3.71,
    "rates": {
-    "jungle": 3.74
+    "jungle": 3.71
    }
   },
   {
    "name": "blitzcrank",
    "main": "support",
-   "rate": 7.28,
+   "rate": 7.24,
    "rates": {
-    "support": 7.28
+    "support": 7.24
    }
   },
   {
    "name": "brand",
    "main": "support",
-   "rate": 2.24,
+   "rate": 2.25,
    "rates": {
     "mid": 0.81,
-    "support": 2.24
+    "support": 2.25
    }
   },
   {
@@ -165,120 +165,120 @@
   {
    "name": "briar",
    "main": "jungle",
-   "rate": 6.55,
+   "rate": 6.62,
    "rates": {
-    "jungle": 6.55
+    "jungle": 6.62
    }
   },
   {
    "name": "caitlyn",
    "main": "adc",
-   "rate": 10.31,
+   "rate": 10.32,
    "rates": {
-    "adc": 10.31
+    "adc": 10.32
    }
   },
   {
    "name": "camille",
    "main": "top",
-   "rate": 2.78,
+   "rate": 2.83,
    "rates": {
-    "top": 2.78,
-    "support": 0.96
+    "top": 2.83,
+    "support": 0.94
    }
   },
   {
    "name": "cassiopeia",
    "main": "mid",
-   "rate": 1.43,
+   "rate": 1.4,
    "rates": {
-    "mid": 1.43
+    "mid": 1.4
    }
   },
   {
    "name": "chogath",
    "main": "jungle",
-   "rate": 7.33,
+   "rate": 7.41,
    "rates": {
-    "top": 2.75,
-    "jungle": 7.33
+    "top": 2.74,
+    "jungle": 7.41
    }
   },
   {
    "name": "corki",
    "main": "adc",
-   "rate": 2.56,
+   "rate": 2.5,
    "rates": {
-    "adc": 2.56
+    "adc": 2.5
    }
   },
   {
    "name": "darius",
    "main": "top",
-   "rate": 8.74,
+   "rate": 8.72,
    "rates": {
-    "top": 8.74,
-    "jungle": 2.61
+    "top": 8.72,
+    "jungle": 2.62
    }
   },
   {
    "name": "diana",
    "main": "mid",
-   "rate": 3.72,
+   "rate": 3.71,
    "rates": {
-    "jungle": 3.37,
-    "mid": 3.72
+    "jungle": 3.38,
+    "mid": 3.71
    }
   },
   {
    "name": "draven",
    "main": "adc",
-   "rate": 1.79,
+   "rate": 1.78,
    "rates": {
-    "adc": 1.79
+    "adc": 1.78
    }
   },
   {
    "name": "drmundo",
    "main": "top",
-   "rate": 4.86,
+   "rate": 4.83,
    "rates": {
-    "top": 4.86,
-    "jungle": 1.16
+    "top": 4.83,
+    "jungle": 1.18
    }
   },
   {
    "name": "ekko",
    "main": "mid",
-   "rate": 4.27,
+   "rate": 4.34,
    "rates": {
     "jungle": 3.24,
-    "mid": 4.27
+    "mid": 4.34
    }
   },
   {
    "name": "elise",
    "main": "jungle",
-   "rate": 1.1,
+   "rate": 1.09,
    "rates": {
-    "jungle": 1.1,
-    "support": 0.66
+    "jungle": 1.09,
+    "support": 0.65
    }
   },
   {
    "name": "evelynn",
    "main": "jungle",
-   "rate": 2.87,
+   "rate": 2.85,
    "rates": {
-    "jungle": 2.87
+    "jungle": 2.85
    }
   },
   {
    "name": "ezreal",
    "main": "adc",
-   "rate": 20.53,
+   "rate": 20.41,
    "rates": {
-    "adc": 20.53
+    "adc": 20.41
    }
   },
   {
@@ -292,27 +292,27 @@
   {
    "name": "fiora",
    "main": "top",
-   "rate": 2.46,
+   "rate": 2.48,
    "rates": {
-    "top": 2.46
+    "top": 2.48
    }
   },
   {
    "name": "fizz",
    "main": "mid",
-   "rate": 2.73,
+   "rate": 2.75,
    "rates": {
-    "jungle": 0.53,
-    "mid": 2.73
+    "jungle": 0.52,
+    "mid": 2.75
    }
   },
   {
    "name": "galio",
    "main": "mid",
-   "rate": 8.65,
+   "rate": 8.61,
    "rates": {
-    "mid": 8.65,
-    "support": 1.31
+    "mid": 8.61,
+    "support": 1.32
    }
   },
   {
@@ -326,34 +326,34 @@
   {
    "name": "garen",
    "main": "top",
-   "rate": 9.26,
+   "rate": 9.23,
    "rates": {
-    "top": 9.26,
-    "mid": 1.09
+    "top": 9.23,
+    "mid": 1.08
    }
   },
   {
    "name": "gnar",
    "main": "top",
-   "rate": 3.84,
+   "rate": 3.87,
    "rates": {
-    "top": 3.84
+    "top": 3.87
    }
   },
   {
    "name": "gragas",
    "main": "top",
-   "rate": 1.32,
+   "rate": 1.3,
    "rates": {
-    "top": 1.32
+    "top": 1.3
    }
   },
   {
    "name": "graves",
    "main": "jungle",
-   "rate": 3.64,
+   "rate": 3.62,
    "rates": {
-    "jungle": 3.64
+    "jungle": 3.62
    }
   },
   {
@@ -362,82 +362,82 @@
    "rate": 4.69,
    "rates": {
     "top": 4.69,
-    "jungle": 1.35
+    "jungle": 1.37
    }
   },
   {
    "name": "hecarim",
    "main": "jungle",
-   "rate": 2.53,
+   "rate": 2.56,
    "rates": {
-    "jungle": 2.53
+    "jungle": 2.56
    }
   },
   {
    "name": "heimerdinger",
    "main": "top",
-   "rate": 2.39,
+   "rate": 2.38,
    "rates": {
-    "top": 2.39,
+    "top": 2.38,
     "mid": 1.11
    }
   },
   {
    "name": "hwei",
    "main": "mid",
-   "rate": 6.82,
+   "rate": 6.77,
    "rates": {
-    "mid": 6.82,
+    "mid": 6.77,
     "adc": 0.74
    }
   },
   {
    "name": "illaoi",
    "main": "top",
-   "rate": 6.07,
+   "rate": 6.12,
    "rates": {
-    "top": 6.07
+    "top": 6.12
    }
   },
   {
    "name": "irelia",
    "main": "top",
-   "rate": 3.48,
+   "rate": 3.53,
    "rates": {
-    "top": 3.48,
-    "mid": 3.09
+    "top": 3.53,
+    "mid": 3.12
    }
   },
   {
    "name": "ivern",
    "main": "jungle",
-   "rate": 0.66,
+   "rate": 0.65,
    "rates": {
-    "jungle": 0.66
+    "jungle": 0.65
    }
   },
   {
    "name": "janna",
    "main": "support",
-   "rate": 0.83,
+   "rate": 0.84,
    "rates": {
-    "support": 0.83
+    "support": 0.84
    }
   },
   {
    "name": "jarvaniv",
    "main": "jungle",
-   "rate": 5.66,
+   "rate": 5.67,
    "rates": {
-    "jungle": 5.66
+    "jungle": 5.67
    }
   },
   {
    "name": "jax",
    "main": "top",
-   "rate": 4.94,
+   "rate": 4.91,
    "rates": {
-    "top": 4.94,
+    "top": 4.91,
     "jungle": 1.39
    }
   },
@@ -454,74 +454,74 @@
   {
    "name": "jhin",
    "main": "adc",
-   "rate": 21.44,
+   "rate": 21.42,
    "rates": {
-    "adc": 21.44
+    "adc": 21.42
    }
   },
   {
    "name": "jinx",
    "main": "adc",
-   "rate": 8.6,
+   "rate": 8.64,
    "rates": {
-    "adc": 8.6
+    "adc": 8.64
    }
   },
   {
    "name": "kaisa",
    "main": "adc",
-   "rate": 15.31,
+   "rate": 15.29,
    "rates": {
-    "adc": 15.31
+    "adc": 15.29
    }
   },
   {
    "name": "kalista",
    "main": "adc",
-   "rate": 1.97,
+   "rate": 1.98,
    "rates": {
-    "adc": 1.97
+    "adc": 1.98
    }
   },
   {
    "name": "karma",
    "main": "support",
-   "rate": 4.94,
+   "rate": 4.89,
    "rates": {
-    "support": 4.94
+    "support": 4.89
    }
   },
   {
    "name": "karthus",
    "main": "jungle",
-   "rate": 1.86,
+   "rate": 1.91,
    "rates": {
-    "jungle": 1.86
+    "jungle": 1.91
    }
   },
   {
    "name": "kassadin",
    "main": "mid",
-   "rate": 1.42,
+   "rate": 1.41,
    "rates": {
-    "mid": 1.42
+    "mid": 1.41
    }
   },
   {
    "name": "katarina",
    "main": "mid",
-   "rate": 4.18,
+   "rate": 4.14,
    "rates": {
-    "mid": 4.18,
-    "adc": 0.56
+    "mid": 4.14,
+    "adc": 0.57
    }
   },
   {
    "name": "kayle",
    "main": "top",
-   "rate": 2.33,
+   "rate": 2.34,
    "rates": {
-    "top": 2.33
+    "top": 2.34
    }
   },
   {
@@ -535,186 +535,186 @@
   {
    "name": "kennen",
    "main": "top",
-   "rate": 1.06,
+   "rate": 1.07,
    "rates": {
-    "top": 1.06
+    "top": 1.07
    }
   },
   {
    "name": "khazix",
    "main": "jungle",
-   "rate": 2.43,
+   "rate": 2.41,
    "rates": {
-    "jungle": 2.43
+    "jungle": 2.41
    }
   },
   {
    "name": "kindred",
    "main": "jungle",
-   "rate": 2.97,
+   "rate": 2.96,
    "rates": {
-    "jungle": 2.97
+    "jungle": 2.96
    }
   },
   {
    "name": "kled",
    "main": "top",
-   "rate": 1.33,
+   "rate": 1.31,
    "rates": {
-    "top": 1.33
+    "top": 1.31
    }
   },
   {
    "name": "kogmaw",
    "main": "adc",
-   "rate": 2.04,
+   "rate": 2.11,
    "rates": {
-    "adc": 2.04
+    "adc": 2.11
    }
   },
   {
    "name": "ksante",
    "main": "top",
-   "rate": 6.5,
+   "rate": 6.57,
    "rates": {
-    "top": 6.5
+    "top": 6.57
    }
   },
   {
    "name": "leblanc",
    "main": "mid",
-   "rate": 3.28,
+   "rate": 3.24,
    "rates": {
-    "mid": 3.28,
-    "support": 0.88
+    "mid": 3.24,
+    "support": 0.87
    }
   },
   {
    "name": "leesin",
    "main": "jungle",
-   "rate": 7.88,
+   "rate": 7.86,
    "rates": {
-    "jungle": 7.88
+    "jungle": 7.86
    }
   },
   {
    "name": "leona",
    "main": "support",
-   "rate": 14.93,
+   "rate": 14.94,
    "rates": {
-    "support": 14.93
+    "support": 14.94
    }
   },
   {
    "name": "lillia",
    "main": "jungle",
-   "rate": 9.05,
+   "rate": 9.09,
    "rates": {
-    "jungle": 9.05
+    "jungle": 9.09
    }
   },
   {
    "name": "lissandra",
    "main": "mid",
-   "rate": 2.52,
+   "rate": 2.59,
    "rates": {
-    "mid": 2.52
+    "mid": 2.59
    }
   },
   {
    "name": "locke",
    "main": "mid",
-   "rate": 3.39,
+   "rate": 3.34,
    "rates": {
-    "jungle": 0.7,
-    "mid": 3.39
+    "jungle": 0.71,
+    "mid": 3.34
    }
   },
   {
    "name": "lucian",
    "main": "adc",
-   "rate": 4.47,
+   "rate": 4.44,
    "rates": {
-    "adc": 4.47
+    "adc": 4.44
    }
   },
   {
    "name": "lulu",
    "main": "support",
-   "rate": 7.52,
+   "rate": 7.51,
    "rates": {
-    "support": 7.52
+    "support": 7.51
    }
   },
   {
    "name": "lux",
    "main": "support",
-   "rate": 7.07,
+   "rate": 7.1,
    "rates": {
-    "mid": 1.9,
-    "support": 7.07
+    "mid": 1.91,
+    "support": 7.1
    }
   },
   {
    "name": "malphite",
    "main": "top",
-   "rate": 7.1,
+   "rate": 7.08,
    "rates": {
-    "top": 7.1,
-    "jungle": 1.58,
-    "mid": 1.08
+    "top": 7.08,
+    "jungle": 1.56,
+    "mid": 1.1
    }
   },
   {
    "name": "malzahar",
    "main": "mid",
-   "rate": 6.91,
+   "rate": 6.92,
    "rates": {
-    "mid": 6.91
+    "mid": 6.92
    }
   },
   {
    "name": "maokai",
    "main": "support",
-   "rate": 2.63,
+   "rate": 2.62,
    "rates": {
-    "top": 0.52,
+    "top": 0.53,
     "jungle": 0.77,
-    "support": 2.63
+    "support": 2.62
    }
   },
   {
    "name": "masteryi",
    "main": "jungle",
-   "rate": 6.11,
+   "rate": 6.04,
    "rates": {
-    "jungle": 6.11
+    "jungle": 6.04
    }
   },
   {
    "name": "mel",
    "main": "mid",
-   "rate": 4.72,
+   "rate": 4.68,
    "rates": {
-    "mid": 4.72,
-    "adc": 1.71,
+    "mid": 4.68,
+    "adc": 1.72,
     "support": 0.77
    }
   },
   {
    "name": "milio",
    "main": "support",
-   "rate": 3.13,
+   "rate": 3.12,
    "rates": {
-    "support": 3.13
+    "support": 3.12
    }
   },
   {
    "name": "missfortune",
    "main": "adc",
-   "rate": 16.97,
+   "rate": 16.96,
    "rates": {
-    "adc": 16.97
+    "adc": 16.96
    }
   },
   {
@@ -728,9 +728,9 @@
   {
    "name": "mordekaiser",
    "main": "top",
-   "rate": 11.02,
+   "rate": 11.01,
    "rates": {
-    "top": 11.02,
+    "top": 11.01,
     "jungle": 0.87
    }
   },
@@ -739,7 +739,7 @@
    "main": "support",
    "rate": 5.72,
    "rates": {
-    "jungle": 0.72,
+    "jungle": 0.71,
     "mid": 0.61,
     "support": 5.72
    }
@@ -747,43 +747,43 @@
   {
    "name": "naafiri",
    "main": "jungle",
-   "rate": 3.99,
+   "rate": 3.96,
    "rates": {
-    "jungle": 3.99,
-    "mid": 1.71
+    "jungle": 3.96,
+    "mid": 1.72
    }
   },
   {
    "name": "nami",
    "main": "support",
-   "rate": 3.44,
+   "rate": 3.5,
    "rates": {
-    "support": 3.44
+    "support": 3.5
    }
   },
   {
    "name": "nasus",
    "main": "top",
-   "rate": 3.65,
+   "rate": 3.63,
    "rates": {
-    "top": 3.65,
+    "top": 3.63,
     "mid": 0.8
    }
   },
   {
    "name": "nautilus",
    "main": "support",
-   "rate": 19.81,
+   "rate": 19.8,
    "rates": {
-    "support": 19.81
+    "support": 19.8
    }
   },
   {
    "name": "neeko",
    "main": "support",
-   "rate": 4.24,
+   "rate": 4.25,
    "rates": {
-    "support": 4.24
+    "support": 4.25
    }
   },
   {
@@ -797,25 +797,25 @@
   {
    "name": "nilah",
    "main": "adc",
-   "rate": 0.56,
+   "rate": 0.55,
    "rates": {
-    "adc": 0.56
+    "adc": 0.55
    }
   },
   {
    "name": "nocturne",
    "main": "jungle",
-   "rate": 5.96,
+   "rate": 5.92,
    "rates": {
-    "jungle": 5.96
+    "jungle": 5.92
    }
   },
   {
    "name": "nunu",
    "main": "jungle",
-   "rate": 1.79,
+   "rate": 1.77,
    "rates": {
-    "jungle": 1.79
+    "jungle": 1.77
    }
   },
   {
@@ -824,15 +824,15 @@
    "rate": 3.21,
    "rates": {
     "top": 3.21,
-    "jungle": 0.52
+    "jungle": 0.51
    }
   },
   {
    "name": "orianna",
    "main": "mid",
-   "rate": 4.35,
+   "rate": 4.32,
    "rates": {
-    "mid": 4.35
+    "mid": 4.32
    }
   },
   {
@@ -846,47 +846,47 @@
   {
    "name": "pantheon",
    "main": "support",
-   "rate": 4.1,
+   "rate": 4.09,
    "rates": {
-    "top": 2.33,
+    "top": 2.34,
     "jungle": 1.42,
     "mid": 1.04,
-    "support": 4.1
+    "support": 4.09
    }
   },
   {
    "name": "poppy",
    "main": "support",
-   "rate": 2.19,
+   "rate": 2.22,
    "rates": {
     "top": 0.73,
-    "support": 2.19
+    "support": 2.22
    }
   },
   {
    "name": "pyke",
    "main": "support",
-   "rate": 4.87,
+   "rate": 4.88,
    "rates": {
-    "support": 4.87
+    "support": 4.88
    }
   },
   {
    "name": "qiyana",
    "main": "jungle",
-   "rate": 3.75,
+   "rate": 3.7,
    "rates": {
-    "jungle": 3.75,
-    "mid": 1.47
+    "jungle": 3.7,
+    "mid": 1.45
    }
   },
   {
    "name": "quinn",
    "main": "jungle",
-   "rate": 0.88,
+   "rate": 0.89,
    "rates": {
     "top": 0.51,
-    "jungle": 0.88
+    "jungle": 0.89
    }
   },
   {
@@ -900,25 +900,25 @@
   {
    "name": "rammus",
    "main": "jungle",
-   "rate": 0.96,
+   "rate": 0.94,
    "rates": {
-    "jungle": 0.96
+    "jungle": 0.94
    }
   },
   {
    "name": "reksai",
    "main": "jungle",
-   "rate": 0.82,
+   "rate": 0.81,
    "rates": {
-    "jungle": 0.82
+    "jungle": 0.81
    }
   },
   {
    "name": "rell",
    "main": "support",
-   "rate": 7.33,
+   "rate": 7.31,
    "rates": {
-    "support": 7.33
+    "support": 7.31
    }
   },
   {
@@ -932,17 +932,17 @@
   {
    "name": "renekton",
    "main": "top",
-   "rate": 7.42,
+   "rate": 7.37,
    "rates": {
-    "top": 7.42
+    "top": 7.37
    }
   },
   {
    "name": "rengar",
    "main": "jungle",
-   "rate": 1.44,
+   "rate": 1.41,
    "rates": {
-    "jungle": 1.44
+    "jungle": 1.41
    }
   },
   {
@@ -956,25 +956,25 @@
   {
    "name": "rumble",
    "main": "top",
-   "rate": 2.16,
+   "rate": 2.18,
    "rates": {
-    "top": 2.16
+    "top": 2.18
    }
   },
   {
    "name": "ryze",
    "main": "mid",
-   "rate": 1.45,
+   "rate": 1.44,
    "rates": {
-    "mid": 1.45
+    "mid": 1.44
    }
   },
   {
    "name": "samira",
    "main": "adc",
-   "rate": 2.42,
+   "rate": 2.43,
    "rates": {
-    "adc": 2.42
+    "adc": 2.43
    }
   },
   {
@@ -990,24 +990,24 @@
    "main": "support",
    "rate": 5.01,
    "rates": {
-    "adc": 0.51,
+    "adc": 0.52,
     "support": 5.01
    }
   },
   {
    "name": "seraphine",
    "main": "support",
-   "rate": 12.63,
+   "rate": 12.61,
    "rates": {
-    "support": 12.63
+    "support": 12.61
    }
   },
   {
    "name": "sett",
    "main": "top",
-   "rate": 5.99,
+   "rate": 6.01,
    "rates": {
-    "top": 5.99
+    "top": 6.01
    }
   },
   {
@@ -1022,37 +1022,37 @@
   {
    "name": "shen",
    "main": "top",
-   "rate": 1.76,
+   "rate": 1.72,
    "rates": {
-    "top": 1.76,
-    "jungle": 0.67,
+    "top": 1.72,
+    "jungle": 0.65,
     "support": 0.55
    }
   },
   {
    "name": "shyvana",
    "main": "jungle",
-   "rate": 7.32,
+   "rate": 7.31,
    "rates": {
-    "jungle": 7.32
+    "jungle": 7.31
    }
   },
   {
    "name": "singed",
    "main": "top",
-   "rate": 1.77,
+   "rate": 1.79,
    "rates": {
-    "top": 1.77
+    "top": 1.79
    }
   },
   {
    "name": "sion",
    "main": "top",
-   "rate": 5.29,
+   "rate": 5.32,
    "rates": {
-    "top": 5.29,
+    "top": 5.32,
     "jungle": 0.78,
-    "mid": 2.4
+    "mid": 2.41
    }
   },
   {
@@ -1066,90 +1066,90 @@
   {
    "name": "skarner",
    "main": "jungle",
-   "rate": 1.91,
+   "rate": 1.89,
    "rates": {
-    "jungle": 1.91
+    "jungle": 1.89
    }
   },
   {
    "name": "smolder",
    "main": "adc",
-   "rate": 6.03,
+   "rate": 6.04,
    "rates": {
     "mid": 0.58,
-    "adc": 6.03
+    "adc": 6.04
    }
   },
   {
    "name": "sona",
    "main": "support",
-   "rate": 2.13,
+   "rate": 2.16,
    "rates": {
-    "support": 2.13
+    "support": 2.16
    }
   },
   {
    "name": "soraka",
    "main": "support",
-   "rate": 1.44,
+   "rate": 1.45,
    "rates": {
-    "support": 1.44
+    "support": 1.45
    }
   },
   {
    "name": "swain",
    "main": "support",
-   "rate": 4.6,
+   "rate": 4.57,
    "rates": {
-    "top": 0.71,
+    "top": 0.68,
     "mid": 0.98,
-    "adc": 1.6,
-    "support": 4.6
+    "adc": 1.58,
+    "support": 4.57
    }
   },
   {
    "name": "sylas",
    "main": "mid",
-   "rate": 4.96,
+   "rate": 4.98,
    "rates": {
-    "jungle": 4.93,
-    "mid": 4.96,
-    "support": 0.82
+    "jungle": 4.95,
+    "mid": 4.98,
+    "support": 0.81
    }
   },
   {
    "name": "syndra",
    "main": "mid",
-   "rate": 6.5,
+   "rate": 6.55,
    "rates": {
-    "mid": 6.5
+    "mid": 6.55
    }
   },
   {
    "name": "tahmkench",
    "main": "support",
-   "rate": 3.81,
+   "rate": 3.83,
    "rates": {
-    "top": 1.14,
-    "support": 3.81
+    "top": 1.15,
+    "support": 3.83
    }
   },
   {
    "name": "taliyah",
    "main": "jungle",
-   "rate": 2.19,
+   "rate": 2.21,
    "rates": {
-    "jungle": 2.19,
-    "mid": 2.02
+    "jungle": 2.21,
+    "mid": 2.01
    }
   },
   {
    "name": "talon",
    "main": "jungle",
-   "rate": 4.66,
+   "rate": 4.65,
    "rates": {
-    "jungle": 4.66,
-    "mid": 0.98
+    "jungle": 4.65,
+    "mid": 0.97
    }
   },
   {
@@ -1163,11 +1163,11 @@
   {
    "name": "teemo",
    "main": "top",
-   "rate": 3.55,
+   "rate": 3.57,
    "rates": {
-    "top": 3.55,
+    "top": 3.57,
     "jungle": 0.88,
-    "support": 0.73
+    "support": 0.75
    }
   },
   {
@@ -1181,17 +1181,17 @@
   {
    "name": "tristana",
    "main": "adc",
-   "rate": 3.93,
+   "rate": 3.96,
    "rates": {
-    "adc": 3.93
+    "adc": 3.96
    }
   },
   {
    "name": "trundle",
    "main": "top",
-   "rate": 1.36,
+   "rate": 1.35,
    "rates": {
-    "top": 1.36,
+    "top": 1.35,
     "jungle": 1.2
    }
   },
@@ -1201,15 +1201,15 @@
    "rate": 2.67,
    "rates": {
     "top": 2.67,
-    "jungle": 0.67
+    "jungle": 0.66
    }
   },
   {
    "name": "twistedfate",
    "main": "mid",
-   "rate": 4.72,
+   "rate": 4.76,
    "rates": {
-    "mid": 4.72
+    "mid": 4.76
    }
   },
   {
@@ -1225,42 +1225,42 @@
    "main": "jungle",
    "rate": 1.55,
    "rates": {
-    "top": 0.76,
+    "top": 0.75,
     "jungle": 1.55
    }
   },
   {
    "name": "urgot",
    "main": "top",
-   "rate": 3.16,
+   "rate": 3.15,
    "rates": {
-    "top": 3.16
+    "top": 3.15
    }
   },
   {
    "name": "varus",
    "main": "adc",
-   "rate": 5.48,
+   "rate": 5.53,
    "rates": {
-    "adc": 5.48
+    "adc": 5.53
    }
   },
   {
    "name": "vayne",
    "main": "adc",
-   "rate": 1.52,
+   "rate": 1.5,
    "rates": {
-    "top": 1.45,
-    "adc": 1.52
+    "top": 1.44,
+    "adc": 1.5
    }
   },
   {
    "name": "veigar",
    "main": "mid",
-   "rate": 6.5,
+   "rate": 6.48,
    "rates": {
-    "mid": 6.5,
-    "adc": 2.61
+    "mid": 6.48,
+    "adc": 2.59
    }
   },
   {
@@ -1268,60 +1268,60 @@
    "main": "support",
    "rate": 3.36,
    "rates": {
-    "mid": 1.01,
-    "adc": 0.75,
+    "mid": 1.02,
+    "adc": 0.78,
     "support": 3.36
    }
   },
   {
    "name": "vex",
    "main": "mid",
-   "rate": 4.33,
+   "rate": 4.37,
    "rates": {
-    "mid": 4.33
+    "mid": 4.37
    }
   },
   {
    "name": "vi",
    "main": "jungle",
-   "rate": 7.17,
+   "rate": 7.2,
    "rates": {
-    "jungle": 7.17
+    "jungle": 7.2
    }
   },
   {
    "name": "viego",
    "main": "jungle",
-   "rate": 9.33,
+   "rate": 9.3,
    "rates": {
-    "jungle": 9.33
+    "jungle": 9.3
    }
   },
   {
    "name": "viktor",
    "main": "mid",
-   "rate": 8.61,
+   "rate": 8.6,
    "rates": {
-    "mid": 8.61,
-    "adc": 1.1
+    "mid": 8.6,
+    "adc": 1.08
    }
   },
   {
    "name": "vladimir",
    "main": "mid",
-   "rate": 2.0,
+   "rate": 2.03,
    "rates": {
-    "top": 0.5,
-    "mid": 2.0
+    "top": 0.51,
+    "mid": 2.03
    }
   },
   {
    "name": "volibear",
    "main": "top",
-   "rate": 2.96,
+   "rate": 2.93,
    "rates": {
-    "top": 2.96,
-    "jungle": 1.52
+    "top": 2.93,
+    "jungle": 1.51
    }
   },
   {
@@ -1329,128 +1329,128 @@
    "main": "jungle",
    "rate": 3.58,
    "rates": {
-    "top": 0.98,
+    "top": 0.97,
     "jungle": 3.58
    }
   },
   {
    "name": "xayah",
    "main": "adc",
-   "rate": 8.28,
+   "rate": 8.25,
    "rates": {
-    "adc": 8.28
+    "adc": 8.25
    }
   },
   {
    "name": "xerath",
    "main": "mid",
-   "rate": 3.84,
+   "rate": 3.83,
    "rates": {
-    "mid": 3.84,
-    "support": 3.73
+    "mid": 3.83,
+    "support": 3.7
    }
   },
   {
    "name": "xinzhao",
    "main": "jungle",
-   "rate": 3.34,
+   "rate": 3.38,
    "rates": {
-    "jungle": 3.34
+    "jungle": 3.38
    }
   },
   {
    "name": "yasuo",
    "main": "mid",
-   "rate": 5.38,
+   "rate": 5.37,
    "rates": {
     "top": 1.31,
-    "mid": 5.38,
-    "adc": 1.12
+    "mid": 5.37,
+    "adc": 1.13
    }
   },
   {
    "name": "yone",
    "main": "mid",
-   "rate": 11.35,
+   "rate": 11.44,
    "rates": {
-    "top": 7.15,
-    "mid": 11.35
+    "top": 7.17,
+    "mid": 11.44
    }
   },
   {
    "name": "yorick",
    "main": "top",
-   "rate": 7.73,
+   "rate": 7.67,
    "rates": {
-    "top": 7.73,
-    "mid": 0.67
+    "top": 7.67,
+    "mid": 0.68
    }
   },
   {
    "name": "yunara",
    "main": "adc",
-   "rate": 12.84,
+   "rate": 12.86,
    "rates": {
-    "adc": 12.84
+    "adc": 12.86
    }
   },
   {
    "name": "yuumi",
    "main": "support",
-   "rate": 4.02,
+   "rate": 3.98,
    "rates": {
-    "support": 4.02
+    "support": 3.98
    }
   },
   {
    "name": "zaahen",
    "main": "top",
-   "rate": 3.17,
+   "rate": 3.15,
    "rates": {
-    "top": 3.17,
-    "jungle": 1.87
+    "top": 3.15,
+    "jungle": 1.89
    }
   },
   {
    "name": "zac",
    "main": "jungle",
-   "rate": 1.72,
+   "rate": 1.74,
    "rates": {
-    "jungle": 1.72
+    "jungle": 1.74
    }
   },
   {
    "name": "zed",
    "main": "mid",
-   "rate": 4.89,
+   "rate": 4.87,
    "rates": {
-    "jungle": 1.08,
-    "mid": 4.89
+    "jungle": 1.1,
+    "mid": 4.87
    }
   },
   {
    "name": "zeri",
    "main": "adc",
-   "rate": 5.07,
+   "rate": 5.09,
    "rates": {
-    "adc": 5.07
+    "adc": 5.09
    }
   },
   {
    "name": "ziggs",
    "main": "adc",
-   "rate": 4.23,
+   "rate": 4.29,
    "rates": {
     "mid": 0.61,
-    "adc": 4.23
+    "adc": 4.29
    }
   },
   {
    "name": "zilean",
    "main": "support",
-   "rate": 1.81,
+   "rate": 1.8,
    "rates": {
-    "support": 1.81
+    "support": 1.8
    }
   },
   {
@@ -1465,10 +1465,10 @@
   {
    "name": "zyra",
    "main": "jungle",
-   "rate": 5.09,
+   "rate": 5.11,
    "rates": {
-    "jungle": 5.09,
-    "support": 4.89
+    "jungle": 5.11,
+    "support": 4.9
    }
   }
  ]
